@@ -13,6 +13,6 @@ node {
    }
    stage('deploy') {
       azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
-      resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/app.zip"
+      resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/todo.zip"
    }
 }
