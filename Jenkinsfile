@@ -2,6 +2,9 @@ node {
    stage('init') {
       checkout scm
    }
+   stage('Test API') {
+      echo 'API testing.....'
+   }
    stage('build') {
       sh '''
          mvn clean package
