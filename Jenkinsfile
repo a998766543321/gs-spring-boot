@@ -5,8 +5,10 @@ node {
       checkout scm
    }
    stage('Test API') {
-      //def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: 'ls98y3khifs8oih3kjshihksjd'], credentialsId: 'DemoJenkinsCredentials'
+      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: 'ls98y3khifs8oih3kjshihksjd'], credentialsId: 'DemoJenkinsCredentials'
       def jsonSlurper = new JsonSlurper()
+      echo response.content
+      //def createResponse = jsonSlurper.parseText(response.content)
       echo 'API testing.....'
    }
    stage('build') {
