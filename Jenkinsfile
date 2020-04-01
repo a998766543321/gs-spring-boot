@@ -3,7 +3,7 @@ node {
       checkout scm
    }
    stage('Test API') {
-      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'exampledev', producerId: 'ls98y3khifs8oih3kjshihksjd'], credentialsId: 'jenkins-vault', vaultConfiguration: [url: 'https://vault.example.com:8200', path: 'secret/for/service_now/']
+      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: 'ls98y3khifs8oih3kjshihksjd'], credentialsId: 'DemoJenkinsCredentials'
       echo 'API testing.....'
    }
    stage('build') {
