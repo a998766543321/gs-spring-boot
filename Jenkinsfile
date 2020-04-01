@@ -3,6 +3,7 @@ node {
       checkout scm
    }
    stage('Test API') {
+      def jsonSlurper = new JsonSlurper()
       echo 'API testing.....'
    }
    stage('build') {
