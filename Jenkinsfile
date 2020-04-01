@@ -7,6 +7,8 @@ node {
    stage('Test API') {
       def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: 'ls98y3khifs8oih3kjshihksjd'], credentialsId: 'DemoJenkinsCredentials'
       def jsonSlurper = new JsonSlurper()
+      /*
+      // Outputs the headers information 
       def responseHeaders = response.headers
       responseHeaders.each { 
          entry -> echo "Key: $entry.key"
@@ -14,10 +16,10 @@ node {
             echo "Value $index: $valEntry"
          }
       }
-      
+      */
       echo response.content
       //def createResponse = jsonSlurper.parseText(response.content)
-      echo 'API testing.....'
+      echo 'API testing ends'
    }
    stage('build') {
       sh '''
