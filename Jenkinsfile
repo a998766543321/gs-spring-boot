@@ -7,6 +7,7 @@ node {
    stage('Test API') {
       def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: 'ls98y3khifs8oih3kjshihksjd'], credentialsId: 'DemoJenkinsCredentials'
       def jsonSlurper = new JsonSlurper()
+      echo response.header
       echo response.content
       //def createResponse = jsonSlurper.parseText(response.content)
       echo 'API testing.....'
