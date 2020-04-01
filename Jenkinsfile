@@ -10,7 +10,7 @@ node {
       def responseHeaders = response.headers
       responseHeaders.each { 
          entry -> echo "Key: $entry.key"
-         $entry.value.eachWithIndex { valEntry, index ->
+         entry.value.eachWithIndex { valEntry, index ->
             echo "Value $index: $valEntry"
          }
       }
