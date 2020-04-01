@@ -5,8 +5,8 @@ node {
       checkout scm
    }
    stage('Test API') {
-      // Start a Reboot Windows Server change
-      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: '3D563504cc47410200e90d87e8dee490e2'], credentialsId: 'ServiceNowDemo4'
+      // Produce a new change?
+      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: '3Dcb2a927f935002003b7a7a75e57ffb4c'], credentialsId: 'ServiceNowDemo4'
       def jsonSlurper = new JsonSlurper()
       /*
       // Outputs the headers information 
