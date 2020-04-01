@@ -8,7 +8,7 @@ node {
       def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: 'ls98y3khifs8oih3kjshihksjd'], credentialsId: 'DemoJenkinsCredentials'
       def jsonSlurper = new JsonSlurper()
       def responseHeaders = response.headers
-      map.each { entry -> echo "Hex Code: $entry.key" }
+      responseHeaders.each { entry -> echo "Hex Code: $entry.key" }
       
       echo response.content
       //def createResponse = jsonSlurper.parseText(response.content)
