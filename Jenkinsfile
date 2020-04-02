@@ -6,7 +6,9 @@ node {
    }
    stage('Create a change request to SN') {
       
-      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: '426c66e71bb34cd0b93843f7cc4bcb78'], credentialsId: 'ServiceNowDemo4'
+      //def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: '426c66e71bb34cd0b93843f7cc4bcb78'], credentialsId: 'ServiceNowDemo4'
+      def statusCheckResponse = serviceNow_getChangeState serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4'], credentialsId: 'ServiceNowDemo4', serviceNowItem: [sysId: '687e6e23dbb7481077c69296f496199f']
+      
       def jsonSlurper = new JsonSlurper()
       /*
       // Outputs the headers information 
@@ -18,7 +20,8 @@ node {
          }
       }
       */
-      echo response.content
+      //echo response.content
+      echo statusCheckResponse.content
       //def createResponse = jsonSlurper.parseText(response.content)
       echo 'Create a change request to SN complete'
    }
