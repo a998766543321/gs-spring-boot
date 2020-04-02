@@ -4,9 +4,9 @@ node {
    stage('init') {
       checkout scm
    }
-   stage('Test API') {
-      // Produce a new change?
-      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: '563504cc47410200e90d87e8dee490e2'], credentialsId: 'ServiceNowDemo4'
+   stage('Create a change request to SN') {
+      
+      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: '426c66e71bb34cd0b93843f7cc4bcb78'], credentialsId: 'ServiceNowDemo4'
       def jsonSlurper = new JsonSlurper()
       /*
       // Outputs the headers information 
@@ -20,7 +20,7 @@ node {
       */
       echo response.content
       //def createResponse = jsonSlurper.parseText(response.content)
-      echo 'API testing ends'
+      echo 'Create a change request to SN complete'
    }
    stage('build') {
       sh '''
