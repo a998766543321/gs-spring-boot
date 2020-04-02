@@ -6,7 +6,7 @@ node {
    }
    stage('Test API') {
       // Produce a new change?
-      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: '21dd75a71b7f0cd0b93843f7cc4bcb45'], credentialsId: 'ServiceNowDemo4'
+      def response = serviceNow_createChange serviceNowConfiguration: [instance: 'jardineonesolutionhkltddemo4', producerId: '563504cc47410200e90d87e8dee490e2'], credentialsId: 'ServiceNowDemo4'
       def jsonSlurper = new JsonSlurper()
       /*
       // Outputs the headers information 
