@@ -21,7 +21,7 @@ node {
       }
       */
       //echo response.content
-      echo statusCheckResponse.content
+      echo statusCheckResponse
       //def createResponse = jsonSlurper.parseText(response.content)
       echo 'Create a change request to SN complete'
    }
